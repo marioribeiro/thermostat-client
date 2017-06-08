@@ -9,6 +9,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.updateTemperature();
+    setInterval(
+      () => this.updateTemperature(),
+      2000
+    );
+  }
+
+  updateTemperature() {
     var _this = this;
     this.serverRequest =
       axios
