@@ -31,10 +31,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="thermostat-info">
-          <h1>Thermostat Number { this.state.thermostat.id }</h1>
-          <h2>Current Temperature: { this.state.thermostat.temperature }&deg;C</h2>
-        </div>
+        <div className="thermostat">
+			    <div className="temperature">{ this.state.thermostat.temperature }<span className="degrees">&deg;C</span></div>
+			    <div className="thermostat-number">Thermostat { this.state.thermostat.id }</div>
+		    </div>
       </div>
     )
   }

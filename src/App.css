@@ -1,22 +1,51 @@
-@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
-
+@import url("https://fonts.googleapis.com/css?family=Slabo+27px");
 body {
-  font-family: 'Slabo 27px', serif;
-}
+  font-family: 'Slabo 27px', serif; }
 
 .container {
   width: 80%;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-.thermostat-info {
+.thermostat {
+  position: relative;
+  margin: 100px auto;
+  width: 200px;
+  height: 200px;
+  background: #FFF;
+  border-radius: 50%;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer; }
+
+.temperature {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
   text-align: center;
-}
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 60px;
+  color: #F26D5B;
+  letter-spacing: -4px;
+  padding-right: 12px;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all .5s ease-in-out; }
 
-h1 {
-  color: #6E7783;
-}
+.degrees {
+  position: absolute;
+  top: -6px;
+  right: 44px;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 34px;
+  padding: 0 0 0 7px; }
 
-h2 {
-  color: #6E7783
-}
+.thermostat-number {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 12px; }
