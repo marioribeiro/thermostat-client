@@ -30,9 +30,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Thermostat Number { this.state.thermostat.id }</h1>
-        <h2>Current Temperature: { this.state.thermostat.temperature }&deg;C</h2>
+      <div className="container">
+        <div className="thermostat-info">
+          <h1>Thermostat Number { this.state.thermostat.id }</h1>
+          <h2>Current Temperature: { this.state.thermostat.temperature }&deg;C</h2>
+        </div>
       </div>
     )
   }
