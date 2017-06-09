@@ -32,14 +32,20 @@ class App extends React.Component {
         })
   }
 
+  changePowerSaveMode(e){
+    e.preventDefault();
+    axios
+        .post('https://thermostat-api.herokuapp.com/thermostats/1/power_save_mode')
+  }
+
   PowerSaveMode() {
     const inPowerSaveMode = this.state.thermostat.power_save_mode;
       if (inPowerSaveMode) {
         return (
-          <img className="psm" alt="Power Save Mode is On" src="psm_on.png" />
+          <a href="#" role="button" onClick={this.changePowerSaveMode}><img className="psm" alt="Power Save Mode is On" src="psm_on.png" /></a>
         )} else
         return (
-          <img className="psm" alt="Power Save Mode is Off" src="psm_off.png" />
+          <a href="#" role="button" onClick={this.changePowerSaveMode}><img className="psm" alt="Power Save Mode is Off" src="psm_off.png"/></a>
         )}
 
   increaseTemperature(){
@@ -60,7 +66,7 @@ class App extends React.Component {
           <div className="power-save-mode">{ this.PowerSaveMode() }</div>
 			    <div className="thermostat-number">Thermostat { this.state.thermostat.id }</div>
           <div className="controls">
-            <a className="increase-temp" onClick={this.increaseTemperature} >+</a>
+            <a className="increase-temp" onClick={this.increaseTemperature}>+</a>
             <a className="decrease-temp" onClick={this.decreaseTemperature}>-</a>
         </div>
 		    </div>
