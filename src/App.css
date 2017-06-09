@@ -13,11 +13,11 @@
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3);
   cursor: pointer; }
   .thermostat.low-usage {
-    border: 8px solid green; }
+    border: 8px solid #519D9E; }
   .thermostat.medium-usage {
-    border: 8px solid orange; }
+    border: 8px solid #FDD692; }
   .thermostat.high-usage {
-    border: 8px solid red; }
+    border: 8px solid #EC7357; }
 
 .temperature {
   position: absolute;
