@@ -12,11 +12,11 @@ class App extends React.Component {
     this.updateTemperature();
     setInterval(
       () => this.updateTemperature(),
-      2000
+      1000
     );
     setInterval(
       () => this.PowerSaveMode(),
-      2000
+      1000
     );
   }
 
