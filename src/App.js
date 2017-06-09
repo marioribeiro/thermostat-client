@@ -14,6 +14,10 @@ class App extends React.Component {
       () => this.updateTemperature(),
       2000
     );
+    setInterval(
+      () => this.PowerSaveMode(),
+      2000
+    );
   }
 
   updateTemperature() {
@@ -28,11 +32,23 @@ class App extends React.Component {
         })
   }
 
+  PowerSaveMode() {
+    const inPowerSaveMode = this.state.thermostat.power_save_mode;
+      if (inPowerSaveMode) {
+        return (
+          <img className="psm" alt="Power Save Mode is On" src="psm_on.png" />
+
+        )} else
+        return (
+          <img className="psm" alt="Power Save Mode is Off" src="psm_off.png" />
+        )}
+
   render() {
     return (
       <div className="container">
         <div className="thermostat">
 			    <div className="temperature">{ this.state.thermostat.temperature }<span className="degrees">&deg;C</span></div>
+          <div className="power-save-mode">{ this.PowerSaveMode() }</div>
 			    <div className="thermostat-number">Thermostat { this.state.thermostat.id }</div>
 		    </div>
       </div>
