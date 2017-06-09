@@ -22,7 +22,7 @@ class App extends React.Component {
 
   updateTemperature() {
     var _this = this;
-    this.serverRequest =
+    _this.serverRequest =
       axios
         .get('https://thermostat-api.herokuapp.com/thermostats/1')
         .then(function(response) {
@@ -37,11 +37,20 @@ class App extends React.Component {
       if (inPowerSaveMode) {
         return (
           <img className="psm" alt="Power Save Mode is On" src="psm_on.png" />
-
         )} else
         return (
           <img className="psm" alt="Power Save Mode is Off" src="psm_off.png" />
         )}
+
+  increaseTemperature(){
+    axios
+      .post('https://thermostat-api.herokuapp.com/thermostats/1/temperature/increase')
+  }
+
+  decreaseTemperature(){
+    axios
+      .post('https://thermostat-api.herokuapp.com/thermostats/1/temperature/decrease')
+  }
 
   render() {
     return (
@@ -50,6 +59,10 @@ class App extends React.Component {
 			    <div className="temperature">{ this.state.thermostat.temperature }<span className="degrees">&deg;C</span></div>
           <div className="power-save-mode">{ this.PowerSaveMode() }</div>
 			    <div className="thermostat-number">Thermostat { this.state.thermostat.id }</div>
+          <div className="controls">
+            <a className="increase-temp" onClick={this.increaseTemperature} >+</a>
+            <a className="decrease-temp" onClick={this.decreaseTemperature}>-</a>
+        </div>
 		    </div>
       </div>
     )
