@@ -35,7 +35,7 @@ class App extends React.Component {
   changePowerSaveMode(e){
     e.preventDefault();
     axios
-        .post('https://thermostat-api.herokuapp.com/thermostats/1/power_save_mode')
+        .post('https://thermostat-api.herokuapp.com/thermostats/1/power-save-mode')
   }
 
   PowerSaveMode() {
