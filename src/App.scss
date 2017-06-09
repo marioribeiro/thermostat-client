@@ -13,6 +13,15 @@
 	border-radius: 50%;
 	box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.3);
 	cursor: pointer;
+	&.low-usage {
+		border: 8px solid green;
+	}
+	&.medium-usage {
+		border: 8px solid orange;
+	}
+	&.high-usage {
+		border: 8px solid red;
+	}
 }
 	
 .temperature {
@@ -24,7 +33,7 @@
 	font-weight: 400;
 	font-size: 80px;
 	line-height: 60px;
-	color: #F26D5B;
+	color: #000;
 	letter-spacing: -4px;
 	padding-right: 12px;
 	opacity: 1;

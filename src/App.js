@@ -20,6 +20,18 @@ class App extends React.Component {
     );
   }
 
+  energyUsage() {
+    const currentTemperature = this.state.thermostat.temperature
+    switch(true) {
+      case(currentTemperature < 18):
+        return("thermostat low-usage");
+      case(currentTemperature < 25):
+        return("thermostat medium-usage");
+      case(currentTemperature >= 25):
+        return("thermostat high-usage");
+    }
+  }
+
   updateTemperature() {
     var _this = this;
     _this.serverRequest =
@@ -61,7 +73,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="thermostat">
+        <div className={this.energyUsage()}>
 			    <div className="temperature">{ this.state.thermostat.temperature }<span className="degrees">&deg;C</span></div>
           <div className="power-save-mode">{ this.PowerSaveMode() }</div>
 			    <div className="thermostat-number">Thermostat { this.state.thermostat.id }</div>
